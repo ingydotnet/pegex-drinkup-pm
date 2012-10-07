@@ -37,7 +37,7 @@ Enjoy.
 Source: 500 Cocktails, p27
 --- yaml
 name: Tom Collins
-desc: |
+description: |
   This is a delicious beverage for a hot day.
   Refreshing.
 
