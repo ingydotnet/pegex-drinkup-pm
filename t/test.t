@@ -59,5 +59,5 @@ instructions: |
   Shake over ice. Serve.
 
   Enjoy.
-# source: 500 Cocktails, p27
+source: 500 Cocktails, p27
 

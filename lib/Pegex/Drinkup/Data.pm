@@ -35,4 +35,8 @@ sub final {
     return $data;
 }
 
+sub got_metadata {
+   $data->{lc $_[1]->[0]} = $_[1]->[1]
+}
+
 1;
