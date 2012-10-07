@@ -26,6 +26,7 @@ sub got_ingredients {
                amount => 0 + $_->[0],
                unit => $_->[1],
                ingredient => $_->[2],
+               notes => $_->[3],
             }
         } @{$_[1]}
     ];

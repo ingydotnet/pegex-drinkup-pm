@@ -27,6 +27,7 @@ Drink it at a wedding.
 
  * 4 ounces of Club Soda
 *2 ounce Gin
+# beefeater is best!
 * 1 Ounce of Lemon Juice
 *1 tbsp of Simple Syrup
 

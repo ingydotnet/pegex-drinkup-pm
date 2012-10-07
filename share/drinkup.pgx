@@ -31,6 +31,7 @@ ingredient:
     / <SPACE>* /
     name
     / <SPACE>* <EOL> /
+    / (?:<HASH> <SPACE>* (<ANY>+?) <SPACE>* <EOL>)? /
 
 # probably need to attempt to parse 1 1/2 or 1 + 1/2
 # cribbed from json-pgx, minus the exponent version because if you use that

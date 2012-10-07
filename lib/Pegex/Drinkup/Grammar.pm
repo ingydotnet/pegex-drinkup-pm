@@ -40,6 +40,9 @@ sub make_tree {
         },
         {
           '.rgx' => qr/(?-xism:\G\ *\r?\n)/
+        },
+        {
+          '.rgx' => qr/(?-xism:\G(?:\#\ *(.+?)\ *\r?\n)?)/
         }
       ]
     },
