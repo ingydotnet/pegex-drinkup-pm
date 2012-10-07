@@ -1,6 +1,6 @@
 use TestML -run;
 
-# BEGIN { $ENV{PERL_PEGEX_AUTO_COMPILE} = 'Pegex::Drinkup::Grammar' }
+BEGIN { $ENV{PERL_PEGEX_AUTO_COMPILE} = 'Pegex::Drinkup::Grammar' }
 use Pegex::Drinkup;
 # $Pegex::Parser::Debug = 1;
 
