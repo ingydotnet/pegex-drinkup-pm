@@ -14,7 +14,7 @@ sub yaml { Dump($_[0]->value) }
 __DATA__
 %TestML 1.0
 
-*drinkup.parse.yaml == *yaml.load.yaml;
+*drinkup.parse.yaml == *recipe.load.yaml;
 
 === test 1
 --- drinkup
@@ -27,7 +27,7 @@ Drink it at a wedding.
 
  * 4 ounces of Club Soda
 *2 ounce Gin
-# beefeater is best!
+\# beefeater is best!
 * 1 Ounce of Lemon Juice
 *1 tbsp of Simple Syrup
 
@@ -36,7 +36,7 @@ Shake over ice. Serve.
 Enjoy.
 
 Source: 500 Cocktails, p27
---- yaml
+--- recipe
 name: Tom Collins
 description: |
   This is a delicious beverage for a hot day.
@@ -50,6 +50,7 @@ ingredients:
 - ingredient: Gin
   amount: 2
   unit: ounce
+  note: beefeater is best!
 - ingredient: Lemon Juice
   amount: 1
   unit: Ounce

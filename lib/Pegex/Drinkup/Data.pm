@@ -22,12 +22,13 @@ sub got_instructions {
 sub got_ingredients {
     $data->{ingredients} = [
         map {
-            {
+            my $ingredient = {
                amount => 0 + $_->[0],
                unit => $_->[1],
                ingredient => $_->[2],
-               notes => $_->[3],
-            }
+            };
+            $ingredient->{note} = $_->[3] if $_->[3];
+            $ingredient;
         } @{$_[1]}
     ];
 }

@@ -31,7 +31,7 @@ ingredient:
     / <SPACE>* /
     name
     / <SPACE>* <EOL> /
-    / (?:<HASH> <SPACE>* (<ANY>+?) <SPACE>* <EOL>)? /
+    note?
 
 # probably need to attempt to parse 1 1/2 or 1 + 1/2
 # cribbed from json-pgx, minus the exponent version because if you use that
@@ -47,6 +47,8 @@ number: /(
 unit:   /(<WORD>+)(: ~ of)?/
 
 name:   / (<ANY>+?) ~ (= <EOL>) /
+
+note:   / <HASH> <SPACE>* (<ANY>+?) <SPACE>* <EOL> /
 
 instructions: /
    (<ALL>*?)         # instruction text
