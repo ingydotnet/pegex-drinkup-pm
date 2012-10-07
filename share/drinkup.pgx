@@ -36,16 +36,18 @@ number: /(
 
 # this will probably need a hardcoded list at some point :(
 # BLKB: Or maybe use a validator?  depends on the size of the list
-unit:   /(\w+)(: ~ of)?/
+unit:   /(<WORD>+)(: ~ of)?/
 
 name:   / (<ANY>+?) ~ /
 
 instructions: /
    (<ALL>*?)         # instruction text
-   (= <EOL> ([A-Za-z_-]+): ) # Not the footers
+   (= <EOL> <footer_name> <COLON> ) # Not the footers
    ~
 /
 
 footers: metadata+
 
-metadata: / ([A-Za-z_-]+): (<ALL>+) ~ <EOL> /
+metadata: / (<footer_name>) <COLON> (<ANY>+?) ~ <EOL> /
+
+footer_name: / [<WORDS>-]+ /

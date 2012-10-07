@@ -54,10 +54,10 @@ sub make_tree {
       '.ref' => 'ingredient'
     },
     'instructions' => {
-      '.rgx' => qr/(?-xism:\G([\s\S]*?)(?=\r?\n([A-Za-z_-]+):)\s*)/
+      '.rgx' => qr/(?-xism:\G([\s\S]*?)(?=\r?\n[0-9A-Za-z_-]+:)\s*)/
     },
     'metadata' => {
-      '.rgx' => qr/(?-xism:\G([A-Za-z_-]+):([\s\S]+)\s*\r?\n)/
+      '.rgx' => qr/(?-xism:\G([0-9A-Za-z_-]+):(.+?)\s*\r?\n)/
     },
     'name' => {
       '.rgx' => qr/(?-xism:\G(.+?)\s*)/
