@@ -17,6 +17,10 @@ sub make_tree {
     'description' => {
       '.rgx' => qr/(?-xism:\G([\s\S]*?)(?=\r?\n[\ \t]*\*)\s*)/
     },
+    'footers' => {
+      '+min' => 1,
+      '.ref' => 'metadata'
+    },
     'ingredient' => {
       '.all' => [
         {
@@ -50,7 +54,10 @@ sub make_tree {
       '.ref' => 'ingredient'
     },
     'instructions' => {
-      '.rgx' => qr/(?-xism:\G([\s\S]*))/
+      '.rgx' => qr/(?-xism:\G([\s\S]*?)(?=\r?\n([A-Za-z_-]+):)\s*)/
+    },
+    'metadata' => {
+      '.rgx' => qr/(?-xism:\G([A-Za-z_-]+):([\s\S]+)\s*\r?\n)/
     },
     'name' => {
       '.rgx' => qr/(?-xism:\G(.+?)\s*)/
@@ -71,6 +78,9 @@ sub make_tree {
         },
         {
           '.ref' => 'instructions'
+        },
+        {
+          '.ref' => 'footers'
         }
       ]
     },

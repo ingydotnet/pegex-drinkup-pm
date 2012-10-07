@@ -6,7 +6,7 @@ recipe:
     description
     ingredients
     instructions
-#     metadata
+    footers
 
 cocktail: /
     (: ~ <EOL> )?   # Leading whitespace?
@@ -40,4 +40,12 @@ unit:   /(\w+)(: ~ of)?/
 
 name:   / (<ANY>+?) ~ /
 
-instructions: / (<ALL>*) /
+instructions: /
+   (<ALL>*?)         # instruction text
+   (= <EOL> ([A-Za-z_-]+): ) # Not the footers
+   ~
+/
+
+footers: metadata+
+
+metadata: / ([A-Za-z_-]+): (<ALL>+) ~ <EOL> /
