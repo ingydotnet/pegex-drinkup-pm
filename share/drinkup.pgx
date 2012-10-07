@@ -1,0 +1,23 @@
+%grammar drinkup
+%version 0.0.1
+
+recipe:
+    name
+    description
+    ingredients
+#     instructions
+#     metadata
+
+name: /
+    (: ~ <EOL> )?   # Leading whitespace?
+    (<NS> <ANY>*?)  # Cocktail name. Capture it.
+    ~ <EOL>         # Trailing whitespace
+/
+
+description: /
+    (<ALL>*?)       # Description text
+    (!: <EOL> <BLANK>* <STAR> ) # Not the ingredients
+    ~               # Remaining whitespace
+/
+
+ingredients: / (<ALL>*) /   # Everything else for now...
