@@ -31,12 +31,12 @@ sub got_ingredient {
     }
 }
 
-sub final {
-    return $data;
+sub got_metadata {
+    $data->{lc $_[1]->[0]} = $_[1]->[1]
 }
 
-sub got_metadata {
-   $data->{lc $_[1]->[0]} = $_[1]->[2]
+sub final {
+    return $data;
 }
 
 1;

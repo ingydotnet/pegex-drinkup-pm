@@ -8,9 +8,6 @@ sub make_tree {
     '+grammar' => 'drinkup',
     '+toprule' => 'recipe',
     '+version' => '0.0.1',
-    'SPACE' => {
-      '.rgx' => qr/(?-xism:\G\ )/
-    },
     'cocktail' => {
       '.rgx' => qr/(?-xism:\G(?:\s*\r?\n)?(\S.*?)\s*\r?\n)/
     },
@@ -54,18 +51,7 @@ sub make_tree {
       '.rgx' => qr/(?-xism:\G([\s\S]*?)(?=\r?\n[0-9A-Za-z_-]+:)\s*)/
     },
     'metadata' => {
-      '.all' => [
-        {
-          '.rgx' => qr/(?-xism:\G([0-9A-Za-z_-]+):)/
-        },
-        {
-          '+min' => 0,
-          '.ref' => 'SPACE'
-        },
-        {
-          '.rgx' => qr/(?-xism:\G(.+?)\s*\r?\n)/
-        }
-      ]
+      '.rgx' => qr/(?-xism:\G([0-9A-Za-z_-]+):\ *(.+?)\s*\r?\n)/
     },
     'name' => {
       '.rgx' => qr/(?-xism:\G(.+?)\s*(?=\r?\n))/
