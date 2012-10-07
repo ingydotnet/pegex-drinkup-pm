@@ -23,7 +23,14 @@ description: /
 # Ingredient parts
 ingredients: ingredient+
 
-ingredient:  ~ STAR ~ number ~ unit ~ name
+ingredient:
+    / <SPACE>* <STAR> <SPACE>* /
+    number
+    / <SPACE>* /
+    unit
+    / <SPACE>* /
+    name
+    / <SPACE>* <EOL> /
 
 # probably need to attempt to parse 1 1/2 or 1 + 1/2
 # cribbed from json-pgx, minus the exponent version because if you use that
@@ -38,7 +45,7 @@ number: /(
 # BLKB: Or maybe use a validator?  depends on the size of the list
 unit:   /(<WORD>+)(: ~ of)?/
 
-name:   / (<ANY>+?) ~ /
+name:   / (<ANY>+?) ~ (= <EOL>) /
 
 instructions: /
    (<ALL>*?)         # instruction text

@@ -15,6 +15,10 @@ sub got_description {
     $data->{description} = $_[1];
 }
 
+sub got_instructions {
+    $data->{instructions} = $_[1];
+}
+
 sub got_ingredients {
     $data->{ingredients} = $_[1];
 }

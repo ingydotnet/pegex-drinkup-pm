@@ -43,21 +43,21 @@ description: |
 
   Drink it at a wedding.
 ingredients:
-- name: Club Soda
+- ingredient: Club Soda
   amount: 4
+  unit: ounces
+- ingredient: Gin
+  amount: 2
   unit: ounce
-- name: Gin
-  amount: 4
-  unit: ounce
-- name: Lemon Juice
+- ingredient: Lemon Juice
   amount: 1
-  unit: ounce
-- name: Simple Syrup
+  unit: Ounce
+- ingredient: Simple Syrup
   amount: 1
-  unit: ounce
+  unit: tbsp
 instructions: |
   Shake over ice. Serve.
 
   Enjoy.
-source: 500 Cocktails, p27
+# source: 500 Cocktails, p27
 
