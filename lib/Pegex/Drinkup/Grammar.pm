@@ -11,8 +11,11 @@ sub make_tree {
     'STAR' => {
       '.rgx' => qr/(?-xism:\G\*)/
     },
+    'cocktail' => {
+      '.rgx' => qr/(?-xism:\G(?:\s*\r?\n)?(\S.*?)\s*\r?\n)/
+    },
     'description' => {
-      '.rgx' => qr/(?-xism:\G([\s\S]*?)(?!:\r?\n[\ \t]*\*)\s*)/
+      '.rgx' => qr/(?-xism:\G([\s\S]*?)(?=\r?\n[\ \t]*\*)\s*)/
     },
     'ingredient' => {
       '.all' => [
@@ -47,17 +50,10 @@ sub make_tree {
       '.ref' => 'ingredient'
     },
     'instructions' => {
-      '.all' => [
-        {
-          '.rgx' => qr/(?-xism:\G([\s\S]*))/
-        },
-        {
-          '.ref' => 'PEGEX'
-        }
-      ]
+      '.rgx' => qr/(?-xism:\G([\s\S]*))/
     },
     'name' => {
-      '.rgx' => qr/(?-xism:\G(?:\s*\r?\n)?(\S.*?)\s*\r?\n)/
+      '.rgx' => qr/(?-xism:\G(.+?)\s*)/
     },
     'number' => {
       '.rgx' => qr/(?-xism:\G((?:0|[1-9][0-9]*)?(?:\.[0-9]+)?(?:\s*\+?\s*[0-9]+\s*\/\s*[0-9]+)?))/
@@ -65,7 +61,7 @@ sub make_tree {
     'recipe' => {
       '.all' => [
         {
-          '.ref' => 'name'
+          '.ref' => 'cocktail'
         },
         {
           '.ref' => 'description'

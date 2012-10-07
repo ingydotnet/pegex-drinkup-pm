@@ -2,13 +2,13 @@
 %version 0.0.1
 
 recipe:
-    name
+    cocktail
     description
     ingredients
     instructions
 #     metadata
 
-name: /
+cocktail: /
     (: ~ <EOL> )?   # Leading whitespace?
     (<NS> <ANY>*?)  # Cocktail name. Capture it.
     ~ <EOL>         # Trailing whitespace
@@ -16,7 +16,7 @@ name: /
 
 description: /
     (<ALL>*?)       # Description text
-    (!: <EOL> <BLANK>* <STAR> ) # Not the ingredients
+    (= <EOL> <BLANK>* <STAR> ) # Not the ingredients
     ~               # Remaining whitespace
 /
 
@@ -38,5 +38,6 @@ number: /(
 # BLKB: Or maybe use a validator?  depends on the size of the list
 unit:   /(\w+)(: ~ of)?/
 
+name:   / (<ANY>+?) ~ /
+
 instructions: / (<ALL>*) /
-PEGEX

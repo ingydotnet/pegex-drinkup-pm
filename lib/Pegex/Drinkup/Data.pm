@@ -7,7 +7,7 @@ sub initial {
     $data = {};
 }
 
-sub got_name {
+sub got_cocktail {
     $data->{name} = $_[1];
 }
 
