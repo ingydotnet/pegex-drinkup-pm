@@ -42,20 +42,22 @@ desc: |
   Refreshing.
 
   Drink it at a wedding.
-what:
-- part: Club Soda
-  size: 4 oz
-- part: Gin
-  size: 4 oz
-- part: Lemon Juice
-  size: 1 oz
-- part: Simple Syrup
-  size: 1 tbsp
-todo: |
+ingredients:
+- name: Club Soda
+  amount: 4
+  unit: ounce
+- name: Gin
+  amount: 4
+  unit: ounce
+- name: Lemon Juice
+  amount: 1
+  unit: ounce
+- name: Simple Syrup
+  amount: 1
+  unit: ounce
+instructions: |
   Shake over ice. Serve.
 
   Enjoy.
-from:
-  book: 500 Cocktails
-  page: 27
+source: 500 Cocktails, p27
 
