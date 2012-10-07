@@ -5,7 +5,7 @@ recipe:
     name
     description
     ingredients
-#     instructions
+    instructions
 #     metadata
 
 name: /
@@ -20,4 +20,23 @@ description: /
     ~               # Remaining whitespace
 /
 
-ingredients: / (<ALL>*) /   # Everything else for now...
+# Ingredient parts
+ingredients: ingredient+
+
+ingredient:  ~ STAR ~ number ~ unit ~ name
+
+# probably need to attempt to parse 1 1/2 or 1 + 1/2
+# cribbed from json-pgx, minus the exponent version because if you use that
+# in a recipe you should change your units!
+number: /(
+   (: 0 | [1-9] <DIGIT>* )?
+   (: <DOT> <DIGIT>+ )?
+   (: ~ <PLUS>? ~ <DIGIT>+ ~ <SLASH> ~ <DIGIT>+ )?
+)/
+
+# this will probably need a hardcoded list at some point :(
+# BLKB: Or maybe use a validator?  depends on the size of the list
+unit:   /(\w+)(: ~ of)?/
+
+instructions: / (<ALL>*) /
+PEGEX
