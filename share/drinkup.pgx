@@ -55,6 +55,6 @@ instructions: /
 
 footers: metadata+
 
-metadata: / (<footer_name>) <COLON> (<ANY>+?) ~ <EOL> /
+metadata: / (<footer_name>) <COLON> / <SPACE>* / (<ANY>+?) ~ <EOL> /
 
 footer_name: / [<WORDS>-]+ /
