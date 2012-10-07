@@ -5,21 +5,16 @@ use Pegex::Drinkup;
 # $Pegex::Parser::Debug = 1;
 
 use YAML::XS;
-use XXX;
+# use XXX;
 
-sub parse {
-    Pegex::Drinkup->new->parse($_[0]->value);
-}
-
-sub yaml {
-    $YAML::UseHeader = 0;
-    Dump($_[0]->value);
-}
+sub parse { Pegex::Drinkup->new->parse($_[0]->value) }
+sub load { Load($_[0]->value) }
+sub yaml { Dump($_[0]->value) }
 
 __DATA__
 %TestML 1.0
 
-*drinkup.parse.yaml == *yaml;
+*drinkup.parse.yaml == *yaml.load.yaml;
 
 === test 1
 --- drinkup
@@ -41,19 +36,12 @@ Enjoy.
 
 Source: 500 Cocktails, p27
 --- yaml
+name: Tom Collins
 desc: |
   This is a delicious beverage for a hot day.
   Refreshing.
 
   Drink it at a wedding.
-name: Tom Collins
-from:
-  book: 500 Cocktails
-  page: 27
-todo: |
-  Shake over ice. Serve.
-
-  Enjoy.
 what:
 - part: Club Soda
   size: 4 oz
@@ -63,4 +51,11 @@ what:
   size: 1 oz
 - part: Simple Syrup
   size: 1 tbsp
+todo: |
+  Shake over ice. Serve.
+
+  Enjoy.
+from:
+  book: 500 Cocktails
+  page: 27
 
