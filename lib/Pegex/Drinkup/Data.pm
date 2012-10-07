@@ -20,15 +20,15 @@ sub got_instructions {
 }
 
 sub got_ingredients {
-    $data->{ingredients} = $_[1];
-}
-
-sub got_ingredient {
-    return {
-       amount => 0 + $_[1]->[0],
-       unit => $_[1]->[1],
-       ingredient => $_[1]->[2],
-    }
+    $data->{ingredients} = [
+        map {
+            {
+               amount => 0 + $_->[0],
+               unit => $_->[1],
+               ingredient => $_->[2],
+            }
+        } @{$_[1]}
+    ];
 }
 
 sub got_metadata {
