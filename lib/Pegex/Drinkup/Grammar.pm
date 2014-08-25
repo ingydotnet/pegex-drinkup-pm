@@ -52,10 +52,10 @@ sub make_tree {   # Generated/Inlined by Pegex::Grammar (0.55)
       '.ref' => 'ingredient'
     },
     'instructions' => {
-      '.rgx' => qr/\G([\s\S]*?)(?=\r?\n[WORDS-]+:)\s*/
+      '.rgx' => qr/\G([\s\S]*)(?=\r?\n[0-9A-Za-z_\s*]+:)\s*/
     },
     'metadata' => {
-      '.rgx' => qr/\G([WORDS-]+):\ *(.+?)\s*\r?\n/
+      '.rgx' => qr/\G([0-9A-Za-z_\s*]+):\ *(.+?)\s*\r?\n/
     },
     'name' => {
       '.rgx' => qr/\G(.+?)\s*(?=\r?\n)/

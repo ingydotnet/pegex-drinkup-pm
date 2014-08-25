@@ -1,5 +1,6 @@
 package Pegex::Drinkup::Data;
-use base Pegex::Receiver;
+use Pegex::Base;
+extends 'Pegex::Tree';
 
 my $data;
 
