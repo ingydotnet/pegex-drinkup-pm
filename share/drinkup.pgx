@@ -51,7 +51,7 @@ name: / ( ANY+? ) - (= EOL ) /
 note: / HASH SPACE* ( ANY+? ) SPACE* EOL /
 
 instructions: /
-  ( ALL*? )                     # instruction text
+  ( ALL* )                      # instruction text
   (= EOL footer_name COLON )    # Not the footers
   -
 /
@@ -60,4 +60,4 @@ footers: metadata+
 
 metadata: / ( footer_name ) COLON SPACE* ( ANY+? ) - EOL /
 
-footer_name: / [ WORDS- ]+ /
+footer_name: / [ <WORDS>- ]+ /
