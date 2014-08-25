@@ -3,16 +3,16 @@ use base Pegex::Grammar;
 
 use constant file => 'share/drinkup.pgx';
 
-sub make_tree {
+sub make_tree {   # Generated/Inlined by Pegex::Grammar (0.55)
   {
     '+grammar' => 'drinkup',
     '+toprule' => 'recipe',
     '+version' => '0.0.1',
     'cocktail' => {
-      '.rgx' => qr/(?-xism:\G(?:\s*\r?\n)?(\S.*?)\s*\r?\n)/
+      '.rgx' => qr/\G(?:\s*\r?\n)?(\S.*?)\s*\r?\n/
     },
     'description' => {
-      '.rgx' => qr/(?-xism:\G([\s\S]*?)(?=\r?\n[\ \t]*\*)\s*)/
+      '.rgx' => qr/\G([\s\S]*?)(?=\r?\n[\ \t]*\*)\s*/
     },
     'footers' => {
       '+min' => 1,
@@ -21,25 +21,25 @@ sub make_tree {
     'ingredient' => {
       '.all' => [
         {
-          '.rgx' => qr/(?-xism:\G\ *\*\ *)/
+          '.rgx' => qr/\G\ *\*\ */
         },
         {
           '.ref' => 'number'
         },
         {
-          '.rgx' => qr/(?-xism:\G\ *)/
+          '.rgx' => qr/\G\ */
         },
         {
           '.ref' => 'unit'
         },
         {
-          '.rgx' => qr/(?-xism:\G\ *)/
+          '.rgx' => qr/\G\ */
         },
         {
           '.ref' => 'name'
         },
         {
-          '.rgx' => qr/(?-xism:\G\ *\r?\n)/
+          '.rgx' => qr/\G\ *\r?\n/
         },
         {
           '+max' => 1,
@@ -52,19 +52,19 @@ sub make_tree {
       '.ref' => 'ingredient'
     },
     'instructions' => {
-      '.rgx' => qr/(?-xism:\G([\s\S]*?)(?=\r?\n[0-9A-Za-z_-]+:)\s*)/
+      '.rgx' => qr/\G([\s\S]*?)(?=\r?\n[WORDS-]+:)\s*/
     },
     'metadata' => {
-      '.rgx' => qr/(?-xism:\G([0-9A-Za-z_-]+):\ *(.+?)\s*\r?\n)/
+      '.rgx' => qr/\G([WORDS-]+):\ *(.+?)\s*\r?\n/
     },
     'name' => {
-      '.rgx' => qr/(?-xism:\G(.+?)\s*(?=\r?\n))/
+      '.rgx' => qr/\G(.+?)\s*(?=\r?\n)/
     },
     'note' => {
-      '.rgx' => qr/(?-xism:\G\#\ *(.+?)\ *\r?\n)/
+      '.rgx' => qr/\G\#\ *(.+?)\ *\r?\n/
     },
     'number' => {
-      '.rgx' => qr/(?-xism:\G((?:0|[1-9][0-9]*)?(?:\.[0-9]+)?(?:\s*\+?\s*[0-9]+\s*\/\s*[0-9]+)?))/
+      '.rgx' => qr/\G((?:0|[1-9][0-9]*)?(?:\.[0-9]+)?(?:\s*\+?\s*[0-9]+\s*\/\s*[0-9]+)?)/
     },
     'recipe' => {
       '.all' => [
@@ -86,7 +86,7 @@ sub make_tree {
       ]
     },
     'unit' => {
-      '.rgx' => qr/(?-xism:\G(\w+)(?:\s*of)?)/
+      '.rgx' => qr/\G(\w+)(?:\s*of)?/
     }
   }
 }
