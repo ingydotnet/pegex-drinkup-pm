@@ -1,4 +1,9 @@
 ---
+version: 0.0.2
+date:    Tue Aug 26 22:38:33 PDT 2014
+changes:
+- Add lib 'inc' for TestML
+---
 version: 0.0.1
 date:    Mon Aug 25 10:35:32 PDT 2014
 changes:

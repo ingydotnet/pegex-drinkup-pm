@@ -1,4 +1,5 @@
 # BEGIN { $ENV{PERL_PEGEX_AUTO_COMPILE} = 'Pegex::Drinkup::Grammar' }
+use lib 'inc';
 use TestML;
 
 TestML->new(
